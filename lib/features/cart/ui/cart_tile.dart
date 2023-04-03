@@ -76,10 +76,9 @@ class CartTile extends StatelessWidget {
                     children: [
                       IconButton(
                         onPressed: () {
-                          //   cartBloc.add(
-                          //       HomeProductCartButtonClickedEvent(groceryProducts));
+                          cartBloc.add(CartItemRemoveEvent(groceryProducts));
                         },
-                        icon: const Icon(Icons.shopping_cart_outlined),
+                        icon: const Icon(Icons.delete_outline_rounded),
                       ),
                       IconButton(
                         onPressed: () {

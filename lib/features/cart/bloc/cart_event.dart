@@ -9,4 +9,8 @@ class CartInitialEvent extends CartEvent {
   CartInitialEvent(this.groceryProducts);
 }
 
-class CartItemRemoveEvent extends CartEvent {}
+class CartItemRemoveEvent extends CartEvent {
+  final GroceryProducts groceryProducts;
+
+  CartItemRemoveEvent(this.groceryProducts);
+}

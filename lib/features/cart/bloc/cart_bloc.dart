@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
-import 'package:bloc_app/data/grocery_data.dart';
+import 'package:bloc_app/data/cart_item.dart';
 import 'package:bloc_app/features/home/models/home_products_data_model.dart';
 // import 'package:bloc_app/features/home/models/home_products_data_model.dart';
 import 'package:meta/meta.dart';
@@ -21,5 +21,9 @@ class CartBloc extends Bloc<CartEvent, CartState> {
   }
 
   FutureOr<void> cartItemRemoveEvent(
-      CartItemRemoveEvent event, Emitter<CartState> emit) {}
+      CartItemRemoveEvent event, Emitter<CartState> emit) {
+    cartItemsList.remove(event.groceryProducts);
+    emit(CartItemLoadedSuccessState(cartItems: cartItemsList));
+    // emit(CartItemRemovedState());
+  }
 }
